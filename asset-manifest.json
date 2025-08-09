@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AlicePlayez/Todo-List.git/static/css/main.f855e6bc.css",
+    "main.js": "/AlicePlayez/Todo-List.git/static/js/main.ef6c17e5.js",
+    "static/js/453.f0289400.chunk.js": "/AlicePlayez/Todo-List.git/static/js/453.f0289400.chunk.js",
+    "index.html": "/AlicePlayez/Todo-List.git/index.html",
+    "main.f855e6bc.css.map": "/AlicePlayez/Todo-List.git/static/css/main.f855e6bc.css.map",
+    "main.ef6c17e5.js.map": "/AlicePlayez/Todo-List.git/static/js/main.ef6c17e5.js.map",
+    "453.f0289400.chunk.js.map": "/AlicePlayez/Todo-List.git/static/js/453.f0289400.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.ef6c17e5.js"
+  ]
+}
