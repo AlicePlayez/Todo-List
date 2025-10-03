@@ -319,17 +319,75 @@
 
 // }
 
-import "./App.css"
-import {Input} from "./components/input"
-import { Todolist } from "./components/Todolist";
+// import "./App.css"
+// import {Input} from "./components/input"
+// import { Todolist } from "./components/Todolist";
+// import { Spa } from "./components/spa";
+// import { Effect } from "./components/effect";
+// import { API } from "./components/API";
+// import { Context } from "./components/context";
 
+
+
+// function App(){
+//   return(
+//     <div style={{textAlign: "center", fontSize: "28px"}}>
+//       {/* <Input />
+//       <Todolist /> */}
+//       {/* <Spa /> */}
+//       {/* <Effect /> */}
+//       {/* <API /> */}
+//       {/* <Context /> */}
+
+//     </div>
+//   )
+// }
+
+import "./App.css"
+import Navbar from "./components2/navbar"
+import Home from "./pages2/homeIndex"
+import About from "./pages2/about"
+import Contact from "./pages2/contact"
+import Profile from "./pages2/userProfile"
+import ProductDetails from "./pages2/productDetails"
+import EditProfile from "./pages2/editProfile"
+import NotFound from "./pages2/notFound"
+import Cart from "./components2/cart"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import "bootstrap-icons/font/bootstrap-icons.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { createContext, useState } from "react"
+
+export const Data = createContext()
 
 function App(){
+
+  const [fname, setFName] = useState("Hala")
+  const [sname, setSName] = useState("Amgad")
+  const [email, setEmail] = useState("aliceplayez@gmail.com")
+  const [phoneNumber, setPhoneNumber] = useState("0552397565")
+  const [list, setList] = useState([])
+
+
   return(
-    <div style={{textAlign: "center"}}>
-      {/* <Input /> */}
-      <Todolist />
-    </div>
+
+    <Data.Provider value={{list, setList, fname, setFName, sname, setSName, email, setEmail, phoneNumber, setPhoneNumber}}>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/editProfile" element={<EditProfile />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
+    </Data.Provider>
+
+    
   )
 }
 
